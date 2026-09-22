@@ -18,4 +18,4 @@ jobs:
       run: whoami
 
     - name: Chạy câu lệnh in ra màn hình
-      run: echo "Hello từ GitHub Actions
+      run: echo "Hello từ GitHub Actions"
