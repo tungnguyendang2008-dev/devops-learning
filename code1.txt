@@ -1,0 +1,60 @@
+cpp```
+#include <iostream>
+#include <random>
+using namespace std;
+int main()
+{
+    //1. khoi tao mang 2 chieu
+    int mang1[3][4];
+    string mang2[3][3];
+    double mang3[4][5];
+
+    //1.2 khoi tao va gan gia tri
+    const int row = 3;
+    const int col = 4;
+    int mang4[row][col] = { {1,4,7,6},{6,5,1,2},{9,7,6,8} };
+
+    //2. xuat mang
+    for (int i = 0; i < 3; i++) {
+        for (int j=0 ; j < 4; j++) {
+            cout << mang4[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << mang4[1][0] << " " << endl;
+    //3.1 gan gia tri truc tiep
+     mang4[0][0] = 0;
+     mang4[0][1] = 0;
+     for (int i = 0; i < row; i++) {
+         for (int j = 0; j< col; j++) {
+             cout << mang4[i][j] << " ";
+         }
+         cout << endl;
+     }
+     //3.2 tao mang 2 chieu ngau nhien
+     random_device rd;
+     mt19937 gen(rd());
+     uniform_int_distribution<> dis(0, 99);
+
+     //tao mang co row dong va col cot
+     int mang5[row][col];
+     //duyet tung phan tu va gan phan tu nhau nhien
+     for (int i = 0; i < row; i++) {
+         for (int j = 0; j < col; j++) {
+             mang5[i][j] = dis(gen);
+         }
+         cout << endl;
+     }
+     //suat mang
+     for (int i = 0; i < row; i++) {
+         for (int j = 0; j < col; j++) {
+             cout << mang5[i][j] << " ";
+         }
+         cout << endl;
+     }
+
+
+
+
+}
+cpp```
