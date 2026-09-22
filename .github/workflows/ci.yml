@@ -1,0 +1,21 @@
+name: DevOps Learning CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code từ GitHub
+      uses: actions/checkout@v4
+
+    - name: Chạy câu lệnh kiểm tra user
+      run: whoami
+
+    - name: Chạy câu lệnh in ra màn hình
+      run: echo "Hello từ GitHub Actions
