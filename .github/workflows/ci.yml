@@ -19,3 +19,16 @@ jobs:
 
     - name: Chạy câu lệnh in ra màn hình
       run: echo "Hello từ GitHub Actions"
+    - name: Triển khai lên Server qua SSH
+      uses: appleboy/ssh-action@v1.0.3   # Action phổ biến để SSH vào server
+      with:
+       host: ${{ secrets.SERVER_HOST }}      # Địa chỉ IP của server của bạn
+       username: ${{ secrets.SERVER_USER }}  # Tên đăng nhập (ví dụ: ubuntu, root)
+       key: ${{ secrets.SSH_PRIVATE_KEY }}   # Khóa SSH cá nhân để login không cần mật khẩu
+       port: 22
+       script: |
+          cd /path/to/your/project            # Di chuyển vào thư mục dự án trên server
+          git pull origin main                 # Kéo code mới nhất về
+          # Thêm các lệnh khởi động lại ứng dụng của bạn ở đây, ví dụ:
+          # npm install
+          # pm2 restart all
