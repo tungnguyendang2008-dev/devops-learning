@@ -19,15 +19,4 @@ jobs:
 
     - name: Chạy câu lệnh in ra màn hình
       run: echo "Hello từ GitHub Actions"
-    - name: Triển khai lên Server qua SSH
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: localhost
-        proxy_host: ${{ secrets.SERVER_HOST }}
-        proxy_port: 443
-        username: ${{ secrets.SERVER_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 22
-        script: |
-          cd /path/to/your/project
-          git pull origin main
+    
