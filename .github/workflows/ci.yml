@@ -25,7 +25,7 @@ jobs:
        host: ${{ secrets.SERVER_HOST }}      # Địa chỉ IP của server của bạn
        username: ${{ secrets.SERVER_USER }}  # Tên đăng nhập (ví dụ: ubuntu, root)
        key: ${{ secrets.SSH_PRIVATE_KEY }}   # Khóa SSH cá nhân để login không cần mật khẩu
-       port: 22
+       port: 443
        script: |
           cd /path/to/your/project            # Di chuyển vào thư mục dự án trên server
           git pull origin main                 # Kéo code mới nhất về
